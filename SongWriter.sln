@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongWriter", "SongWriter\SongWriter.csproj", "{B733DC24-4FF7-4959-9CE1-32A85F8B270F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B733DC24-4FF7-4959-9CE1-32A85F8B270F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B733DC24-4FF7-4959-9CE1-32A85F8B270F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B733DC24-4FF7-4959-9CE1-32A85F8B270F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B733DC24-4FF7-4959-9CE1-32A85F8B270F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B733DC24-4FF7-4959-9CE1-32A85F8B270F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B733DC24-4FF7-4959-9CE1-32A85F8B270F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEC1F0A9-EDA8-408A-A273-AB3F5E89532A}
+	EndGlobalSection
+EndGlobal

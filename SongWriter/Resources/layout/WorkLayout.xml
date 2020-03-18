@@ -1,0 +1,380 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    >
+    <!--loading when searching-->
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:id="@+id/SearchingContentLoadingProgressBar"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_alignParentStart="true"
+        />
+    
+    <!--accepting changes, searching-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SearchingContentLoadingProgressBar"
+            android:id="@+id/ToolsBarLinearLayout"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp"
+            android:paddingHorizontal="10dp">
+        <!--saving-->
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:tint="?android:attr/colorAccent"
+            android:src="@drawable/accept"
+            android:scaleType="centerInside"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/SaveWorkImageButton"
+            android:background="@android:color/transparent"
+        />
+        <!--searching-->
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:id="@+id/SearchingLinearLayout"
+        android:visibility="invisible"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@id/ToolsLinearLayout"
+        android:orientation="horizontal">
+            <SearchView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:id="@+id/SearchEditText"
+                android:background="@android:color/transparent"
+                android:queryHint="Podaj słowo"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SZUKAJ"
+                android:id="@+id/SearchButton"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--title-->
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:paddingHorizontal="20dp"
+            android:layout_below="@id/ToolsBarLinearLayout"
+            android:id="@+id/TitleEditText"
+            android:hint="Tytuł"
+            android:backgroundTint="@android:color/transparent"
+        />
+
+    <!--searching buttons-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_below="@id/TitleEditText"
+            android:id="@+id/ToolsLinearLayout"
+            android:paddingHorizontal="20dp"
+            android:orientation="horizontal">
+
+        <!--synonyms-->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Szukanie synonimów"
+            android:textAlignment="center"
+            android:id="@+id/FindSynonymsButton"
+            android:layout_weight="1"
+            android:textColor="@color/colorAccent"
+            android:background="@android:color/transparent"
+        />
+
+        <!--rhymes-->
+        <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Szukanie rymów"
+        android:textAlignment="center"
+        android:id="@+id/FindRhymesButton"
+        android:layout_weight="1"
+        android:textColor="@color/colorAccent"
+        android:background="@android:color/transparent"
+        />
+        </LinearLayout>
+
+    <!--numbers pickers-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility = "gone"
+            android:layout_below="@id/ToolsLinearLayout"
+            android:id="@+id/NumberPickersLinearLayout"
+        >
+
+        <!--describes-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="-2dp"
+            >
+
+            <!--matching letters-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="ZGODNOŚĆ"
+                    />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="2dp"
+                android:background="@color/colorPrimaryDark"
+            />
+
+            <!--length-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="MAX LITER"
+                    />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_marginVertical="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+            />
+
+            <!--syllables-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="IL. SYLAB"
+            />
+        </LinearLayout>
+
+        <!--pickers-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:orientation="horizontal">
+
+            <!--matching letters-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/MatchingNumberPickerLinearLayout"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:text="-"
+                    android:id="@+id/MatchingNumberDecreaseButton"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MatchingNumberTextView"
+                    android:text="3"
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MatchingNumberIncreaseButton"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="2dp"
+                android:background="@color/colorPrimaryDark"
+            />
+
+            <!--length-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/LengthNumberPickerLinearLayout"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:text="-"
+                    android:id="@+id/LengthNumberDecreaseButton"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LengthNumberTextView"
+                    android:text="9"
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LengthNumberIncreaseButton"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="2dp"
+                android:background="@color/colorPrimaryDark"
+            />
+
+            <!--syllables-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/SyllablesNumberPickerLinearLayout"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:text="-"
+                    android:id="@+id/SyllablesNumberDecreaseButton"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/SyllablesNumberTextView"
+                    android:text="3"
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/SyllablesNumberIncreaseButton"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <!--text, syllables TextView-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/TextScrollView"
+        android:layout_below="@id/NumberPickersLinearLayout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--syllables count-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:minHeight="600dp"
+                android:paddingTop="10dp"
+                android:textSize="14dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:background="@color/material_grey_100"
+                android:id="@+id/SyllablesCountTextView"
+                android:text="" />
+
+            <!--work text-->
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:layout_marginLeft="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <EditText
+                        android:inputType="textMultiLine"
+                        android:layout_width="wrap_content"
+                        android:minHeight="100dp"
+                        android:minWidth="300dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:hint="Zacznij pisać"
+                        android:id="@+id/WorkEditText"
+                        android:gravity="top|left"
+                        android:backgroundTint="@android:color/transparent"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

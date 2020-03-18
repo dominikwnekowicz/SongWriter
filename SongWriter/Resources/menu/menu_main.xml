@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/deleteItems"
+        android:orderInCategory="101"
+        android:visible="false"
+        android:title="Usuń"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/cancelDeletingItems"
+        android:orderInCategory="100"
+        android:visible="false"
+        android:title="Anuluj"
+        app:showAsAction="always" />
+</menu>
